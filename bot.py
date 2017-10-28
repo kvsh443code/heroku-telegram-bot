@@ -26,7 +26,17 @@ def send_welcome(message):
 Hi there, I am EchoBot.දචචඤ ගිසබය්ක්.. sinhala
 I am here to echo your kind words back to you. Just say anything nice and I'll say the exact same thing to you!\
 """)
-
+@bot.message_handler(content_types=['left_chat_member'])
+def user_leave_greet(message):
+	if message.left_chat_member.id != bot.get_me().id:
+		print("group left curse triggered")
+		f_name = message.left_chat_member.first_name
+		try:
+			l_name=message.left_chat_member.last_name
+		except:
+			l_name="-"
+		title = message.chat.title
+		
 @bot.message_handler(content_types=['left_chat_member'])
 def user_leave_greet(message):
 	if message.left_chat_member.id != bot.get_me().id:
@@ -39,8 +49,8 @@ def user_leave_greet(message):
 		title = message.chat.title
 		bot.send_message(message.chat.id, "*"+title+"*` හි සිටි `_"+f_name+" "+l_name+"_` වන තෝ හිටියත් එකයි! නැතත් එකයි!  👋..`",parse_mode='Markdown')
 	else:
-		print("kicked the bot by some one")
-		bot.send_message(385390931, "*I was kicked by someone*",parse_mode='Markdown')
+		print("kicked the bot by some one from a group")
+		bot.send_message(385390931, "*I was kicked by someone from a group*",parse_mode='Markdown')
 		
 @bot.message_handler(func=lambda message: True)
 def echo_all(message):
