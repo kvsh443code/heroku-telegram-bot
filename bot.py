@@ -27,17 +27,20 @@ Hi there, I am EchoBot.දචචඤ ගිසබය්ක්.. sinhala
 I am here to echo your kind words back to you. Just say anything nice and I'll say the exact same thing to you!\
 """)
 
-@bot.message_handler(content_types=['new_chat_participant'])
+@bot.message_handler(content_types=['new_chat_member'])
 def user_greet(message):
 	print("group welcome triggered")
-	if message.new_chat_participant.id != bot.get_me().id:
+	name = message.new_chat_member.first_name
+	title = message.chat.title
+	bot.send_message(message.chat.id, "Hey "+name+" \nWelcome to the group "+title+ " \n_Have fun & Enjoy!_")
+	if message.new_chat_member.id != bot.get_me().id:
 		print("welcome triggered 2")
-		name = message.new_chat_participant.first_name
+		name = message.new_chat_member.first_name
 		title = message.chat.title
 		bot.send_message(message.chat.id, "Hey "+name+" \nWelcome to the group "+title+ " \n_Have fun & Enjoy!_")
 		
 @bot.message_handler(func=lambda message: True)
-def echo_all(message):
+def echo_al0l(message):
 	print("echo_all triggered")
 	bot.reply_to(message, message.text)
 
