@@ -27,6 +27,11 @@ I am here to echo your kind words back to you. Just say anything nice and I'll s
 """)
 
 
+@bot.message_handler(content_types=['new_chat_members'])
+def send_welcome_new_member(message):
+	bot.reply_to(message,"""\welocme\
+""")
+
 @bot.message_handler(func=lambda message: True)
 def echo_all(message):
 	bot.reply_to(message, message.text)
