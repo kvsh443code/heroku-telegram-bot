@@ -36,7 +36,7 @@ def user_greet(message):
 	except:
 		l_name="-"
 	title = message.chat.title
-	bot.send_message(message.chat.id, "*"+title+"*` හි සිටි `_"+name+"_` වන තෝ හිටියත් එකයි! නැතත් එකයි!  👋..`",parse_mode='Markdown')
+	bot.send_message(message.chat.id, "*"+title+"*` හි සිටි `_"+f_name+" "+l_name+"_` වන තෝ හිටියත් එකයි! නැතත් එකයි!  👋..`",parse_mode='Markdown')
 	
 		
 @bot.message_handler(func=lambda message: True)
