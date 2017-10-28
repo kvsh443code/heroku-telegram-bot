@@ -31,4 +31,4 @@ I am here to echo your kind words back to you. Just say anything nice and I'll s
 def echo_all(message):
 	bot.reply_to(message, message.text)
 
-bot.polling(none_stop=True, interval=0, timeout=3)
+bot.polling()
