@@ -46,7 +46,7 @@ def user_leave_greet(message):
 		except:
 			l_name="-"
 		title = message.chat.title
-		bot.send_message(385390931, "*"+title+"*` හි සිටි `_"+f_name+" "+l_name+ " was kicked by someone",parse_mode='Markdown')
+		bot.send_message(385390931, "I was kicked by someone",parse_mode='Markdown')
 		
 @bot.message_handler(func=lambda message: True)
 def echo_all(message):
