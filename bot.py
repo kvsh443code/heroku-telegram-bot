@@ -31,8 +31,7 @@ def user_greet(message):
 	if message.new_chat_member.id != bot.get_me().id:
 		name = message.new_chat_member.first_name
 		title = message.chat.title
-		bot.send_message(message.chat.id, "Hey *{0}*! \n \nWelcome to the group *{1}* 😊 \n \n_Have fun & Enjoy!_"
-.format(name,title), parse_mode='Markdown')
+		bot.send_message(message.chat.id, "Hey *{0}*! \n \nWelcome to the group *{1}* 😊 \n \n_Have fun & Enjoy!_" .format(name,title), parse_mode='Markdown')
 		
 @bot.message_handler(func=lambda message: True)
 def echo_all(message):
