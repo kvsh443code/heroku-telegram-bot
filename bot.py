@@ -21,14 +21,17 @@ bot = telebot.TeleBot(token)
 
 @bot.message_handler(commands=['help', 'start'])
 def send_welcome(message):
-    bot.reply_to(message, """\
+	print("welcome triggered")
+	bot.reply_to(message, """\
 Hi there, I am EchoBot.දචචඤ ගිසබය්ක්.. sinhala
 I am here to echo your kind words back to you. Just say anything nice and I'll say the exact same thing to you!\
 """)
 
 @bot.message_handler(func=lambda message: True, content_types=['new_chat_member'])
 def user_greet(message):
+	print("group welocme triggered")
 	if message.new_chat_member.id != bot.get_me().id:
+		print("welcome triggered 2")
 		name = message.new_chat_member.first_name
 		title = message.chat.title
 		bot.send_message(message.chat.id, "Hey "+name+" \n \nWelcome to the group"+title+ "😊 \n \n_Have fun & Enjoy!_")
