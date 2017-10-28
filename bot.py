@@ -32,7 +32,7 @@ def user_greet(message):
 	print("group left curse triggered")
 	name = message.left_chat_member.first_name
 	title = message.chat.title
-	bot.send_message(message.chat.id, "`"+title+" හි සිටි "+name+" වන තෝ හිටියත් එකයි! නැතත් එකයි!  👋.."+"`",parse_mode='Markdown')
+	bot.send_message(message.chat.id, "*"+title+"*` හි සිටි `_"+name+"_` වන තෝ හිටියත් එකයි! නැතත් එකයි!  👋..`",parse_mode='Markdown')
 	
 		
 @bot.message_handler(func=lambda message: True)
