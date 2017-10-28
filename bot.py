@@ -37,7 +37,6 @@ def user_greet(message):
 		bot.send_message(message.chat.id, "Hey "+name+" \n \nWelcome to the group"+title+ "😊 \n \n_Have fun & Enjoy!_")
 		
 @bot.message_handler(func=lambda message: True)
-print("message triggered")
 def echo_all(message):
 	print("echo_all triggered")
 	bot.reply_to(message, message.text)
