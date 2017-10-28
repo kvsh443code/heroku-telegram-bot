@@ -22,7 +22,7 @@ bot = telebot.TeleBot(token)
 @bot.message_handler(commands=['help', 'start'])
 def send_welcome(message):
     bot.reply_to(message, """\
-Hi there, I am EchoBot.
+Hi there, I am EchoBot.දචචඤ
 I am here to echo your kind words back to you. Just say anything nice and I'll say the exact same thing to you!\
 """)
 
