@@ -29,15 +29,15 @@ I am here to echo your kind words back to you. Just say anything nice and I'll s
 
 @bot.message_handler(content_types=['left_chat_member'])
 def user_greet(message):
-	print("group welcome triggered")
+	print("group left curse triggered")
 	name = message.left_chat_member.first_name
 	title = message.chat.title
-	bot.send_message(message.chat.id, "Hey "+name+" \nWelcome to the group "+title+ " \n_Have fun & Enjoy!_")
+	bot.send_message(message.chat.id, title+" හි සිටි "name" වන තෝ හිටියත් එකයි! නැතත් එකයි!  👋..")
 	
 		
 @bot.message_handler(func=lambda message: True)
 def echo_al0l(message):
 	print("echo_all triggered")
-	bot.reply_to(message, message.text)
+	bot.reply_to(message, "`"+message.text+"`",parse_mode='Markdown')
 
 bot.polling()
