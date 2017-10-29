@@ -22,10 +22,7 @@ bot = telebot.TeleBot(token)
 @bot.message_handler(commands=['help', 'start'])
 def send_welcome(message):
 	print("welcome triggered")
-	bot.reply_to(message, """\
-Hi there, I am EchoBot.දචචඤ ගිසබය්ක්.. sinhala
-I am here to echo your kind words back to you. Just say anything nice and I'll say the exact same thing to you!\
-""")
+	bot.reply_to(message, "*ආයුබෝවන් හැමෝටම! මම අලුතින් පැමිණෙන සාමාජිකයන් පිළිගැනීමට බැදී සිටිමි*",parse_mode='Markdown')
 @bot.message_handler(content_types=['new_chat_members'])
 def user_joined_greet(message):
 	print("group Joined Welcome triggered")
@@ -39,6 +36,10 @@ def user_joined_greet(message):
 		title = message.chat.title
 		newmember=str(f_name+" "+l_name)
 		bot.send_message(message.chat.id, "`ආයුබෝවන්` " + "_"+newmember+ "_"+ "`..  ඔබව` "+ "*"+title+"*" + "` වෙත සාදරයෙන් පිළිගනිමු 🙏`",parse_mode='Markdown')
+	else:
+		title = message.chat.title
+		print("added to a new group named "+title)
+		bot.send_message(385390931, "*I was added by someone to group* "+title,parse_mode='Markdown')
 		
 @bot.message_handler(content_types=['left_chat_member'])
 def user_leave_greet(message):
@@ -53,7 +54,7 @@ def user_leave_greet(message):
 		bot.send_message(message.chat.id, "*"+title+"*` හි සිටි `_"+f_name+" "+l_name+"_` වන තෝ හිටියත් එකයි! නැතත් එකයි!  👋..`",parse_mode='Markdown')
 	else:
 		title = message.chat.title
-		print("kicked the bot by some one from a group named"+title)
+		print("kicked the bot by some one from a group named "+title)
 		bot.send_message(385390931, "*I was kicked by someone from group* "+title,parse_mode='Markdown')
 		
 @bot.message_handler(func=lambda message: True)
