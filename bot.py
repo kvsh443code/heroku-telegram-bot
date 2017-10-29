@@ -51,7 +51,8 @@ def user_leave_greet(message):
 		except:
 			l_name="-"
 		title = message.chat.title
-		bot.send_message(message.chat.id, "*"+title+"*` හි සිටි `_"+f_name+" "+l_name+"_` වන තෝ හිටියත් එකයි! නැතත් එකයි!  👋..`",parse_mode='Markdown')
+		leftmember=str(f_name+" "+l_name)
+		bot.send_message(message.chat.id, "*"+title+"*` හි සිටි `_"+leftmember+"_` වන තෝ හිටියත් එකයි! නැතත් එකයි!  👋..`",parse_mode='Markdown')
 	else:
 		title = message.chat.title
 		print("kicked the bot by some one from a group named "+title)
