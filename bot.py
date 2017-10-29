@@ -26,14 +26,14 @@ def send_welcome(message):
 Hi there, I am EchoBot.දචචඤ ගිසබය්ක්.. sinhala
 I am here to echo your kind words back to you. Just say anything nice and I'll say the exact same thing to you!\
 """)
-@bot.message_handler(content_types=['new_chat_members'])
+@bot.message_handler(content_types=['new_chat_member'])
 def user_joined_greet(message):
-	print("group Joined Welcome triggered 1")
-	if message.new_chat_members.id != bot.get_me().id:
+	print("group Joined Welcome triggered")
+	if message.new_chat_member.id != bot.get_me().id:
 		print("group Joined Welcome triggered 2")
-		f_name = message.new_chat_members.first_name
+		f_name = message.new_chat_member.first_name
 		try:
-			l_name=message.new_chat_members.last_name
+			l_name=message.new_chat_member.last_name
 		except:
 			l_name="-"
 		title = message.chat.title
