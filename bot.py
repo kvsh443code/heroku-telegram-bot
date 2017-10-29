@@ -28,11 +28,12 @@ I am here to echo your kind words back to you. Just say anything nice and I'll s
 """)
 @bot.message_handler(content_types=['new_chat_members'])
 def user_joined_greet(message):
-	if message.new_chat_member.id != bot.get_me().id:
-		print("group Joined Welcome triggered")
-		f_name = message.new_chat_member.first_name
+	print("group Joined Welcome triggered 1")
+	if message.new_chat_members.id != bot.get_me().id:
+		print("group Joined Welcome triggered 2")
+		f_name = message.new_chat_members.first_name
 		try:
-			l_name=message.new_chat_member.last_name
+			l_name=message.new_chat_members.last_name
 		except:
 			l_name="-"
 		title = message.chat.title
