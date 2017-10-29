@@ -26,7 +26,7 @@ def send_welcome(message):
 Hi there, I am EchoBot.දචචඤ ගිසබය්ක්.. sinhala
 I am here to echo your kind words back to you. Just say anything nice and I'll say the exact same thing to you!\
 """)
-@bot.message_handler(content_types=['new_chat_member'])
+@bot.message_handler(content_types=['new_chat_members'])
 def user_joined_greet(message):
 	if message.new_chat_member.id != bot.get_me().id:
 		print("group Joined Welcome triggered")
