@@ -38,7 +38,7 @@ def user_joined_greet(message):
 			l_name="-"
 		title = message.chat.title
 		newmember=str(f_name+" "+l_name)
-		bot.send_message(message.chat.id, "ආයුබෝවන් " + "_"+newmember+ "_"+ "..  ඔබව "+ "*"+title+"*" + " වෙත සාදරයෙන් පිළිගනිමු 🙏",parse_mode='Markdown')
+		bot.send_message(message.chat.id, "`ආයුබෝවන්` " + "_"+newmember+ "_"+ "`..  ඔබව` "+ "*"+title+"*" + "` වෙත සාදරයෙන් පිළිගනිමු 🙏`",parse_mode='Markdown')
 		
 @bot.message_handler(content_types=['left_chat_member'])
 def user_leave_greet(message):
