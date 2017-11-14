@@ -48,7 +48,12 @@ def user_leave_greet(message):
 		print("group left curse triggered")
 		f_name = message.left_chat_member.first_name
 		title = message.chat.title
-		leftmember=str(f_name)
+		try:
+			l_name=message.left_chat_member.last_name
+			leftmember=str(f_name+" "+l_name)
+		except:
+			l_name=" "
+			leftmember=str(f_name)
 		bot.send_message(message.chat.id, "*"+title+"*` හි සිටි `_"+leftmember+"_` වන තෝ හිටියත් එකයි! නැතත් එකයි!  👋..`",parse_mode='Markdown')
 	else:
 		title = message.chat.title
