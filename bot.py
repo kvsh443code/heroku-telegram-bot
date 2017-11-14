@@ -30,7 +30,12 @@ def user_joined_greet(message):
 		print("group Joined Welcome triggered 2")
 		f_name = message.new_chat_member.first_name
 		title = message.chat.title
-		newmember=str(f_name)
+		try:
+			l_name=message.new_chat_member.last_name
+			newmember=str(f_name+" "+l_name)
+		except:
+			l_name=" "
+			newmember=str(f_name)
 		bot.send_message(message.chat.id, "`ආයුබෝවන්` " + "_"+newmember+ "_"+ "`..  ඔබව` "+ "*"+title+"*" + "` වෙත සාදරයෙන් පිළිගනිමු 🙏`",parse_mode='Markdown')
 	else:
 		title = message.chat.title
