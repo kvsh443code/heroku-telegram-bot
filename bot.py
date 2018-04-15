@@ -64,5 +64,38 @@ def user_leave_greet(message):
 def echo_all(message):
 	print("echo_all triggered")
 	bot.reply_to(message, message.text)
+	
+@bot.message_handler(func=lambda message: True)
+def totext_all(message):
+	print("writing to text")
+	gtext=message.text
+	gchatid =message.chat.id
+	gchat_fname = message.chat.first_name
+	try:
+		gchat_lname = message.chat.last_name
+	except:
+		gchat_lname = " - "
+	try:
+		gchatusrname = message.chat.username
+	except:
+		gfchatusrname = "  - "
+	try:
+		gtitle = message.chat.title
+	except:
+		gtitle = ("*its_empty*")
+	gfromusr_id	= message.from_user.id
+	gfromusr_fname = message.from_user.first_name
+	try:
+		gfromusr_lname = message.from_user.last_name
+	except:
+		gfromusr_lname = "  - "
+	try:
+		gfromusrname = message.from_user.username
+	except:
+		gfromusrname = " - "
+	
+	dumping_data=("| "+str(gtitle)+" "+str(gchatid)+" "+str(gchatusrname)+" "+str(gchat_fname)+" "+str(gchat_lname)+" "+str(gfromusr_id)+" "+str(gfromusrname)+" "+gfromusr_fname+" "+str(gfromusr_lname)+" \n "+gtext+" |  \n \n")
+	
 
+	bot.send_message(tgadmin, dumping_data,parse_mode='Markdown')
 bot.polling()
