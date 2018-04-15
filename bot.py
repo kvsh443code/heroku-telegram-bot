@@ -60,10 +60,6 @@ def user_leave_greet(message):
 		print("kicked the bot by some one from a group named "+title)
 		bot.send_message(tgadmin, "*I was kicked by someone from group* "+title,parse_mode='Markdown')
 		
-@bot.message_handler(func=lambda message: True)
-def echo_all(message):
-	print("echo_all triggered")
-	bot.reply_to(message, message.text)
 	
 @bot.message_handler(func=lambda message: True)
 def totext_all(message):
