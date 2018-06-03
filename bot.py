@@ -19,10 +19,14 @@ bot = telebot.TeleBot(token)
 # some_api = some_api_lib.connect(some_api_token)
 #              ...
 tgadmin=385390931
-@bot.message_handler(commands=['help', 'start'])
+@bot.message_handler(commands=['start'])
 def send_welcome(message):
 	print("welcome triggered")
 	bot.reply_to(message, "*ආයුබෝවන් හැමෝටම! මම අලුතින් පැමිණෙන සාමාජිකයන් පිළිගැනීමට බැදී සිටිමි*",parse_mode='Markdown')
+@bot.message_handler(commands=['help'])
+def send_welcome(message):
+	print("help triggered")
+	bot.reply_to(message, "*මටට පාාඩුවව ඉන්න දෙන්න අලෝ *",parse_mode='Markdown')
 @bot.message_handler(content_types=['new_chat_members'])
 def user_joined_greet(message):
 	print("group Joined Welcome triggered")
