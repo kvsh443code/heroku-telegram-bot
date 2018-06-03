@@ -23,7 +23,7 @@ tgadmin=385390931
 def send_welcome(message):
 	print("welcome triggered")
 	bot.reply_to(message, "*ආයුබෝවන් හැමෝටම! මම අලුතින් පැමිණෙන සාමාජිකයන් පිළිගැනීමට බැදී සිටිමි*",parse_mode='Markdown')
-@bot.message_handler(commands=['help'])
+@bot.message_handler(commands=['uwu'])
 def send_welcome(message):
 	print("help triggered")
 	gfromusr_id	= message.from_user.id
