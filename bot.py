@@ -26,7 +26,13 @@ def send_welcome(message):
 @bot.message_handler(commands=['help'])
 def send_welcome(message):
 	print("help triggered")
-	bot.reply_to(message, "*මට පාාඩුවව ඉන්න දෙන්න අලෝ *",parse_mode='Markdown')
+	gfromusr_fname = message.from_user.first_name
+	try:
+		gfromusr_lname = message.from_user.last_name
+	except:
+		gfromusr_lname = " "
+	gfromusr_fullname = (str(gfromusr_fname+" "+gfromusr_lname))
+	bot.reply_to(message, "*මට පාඩුවේ ඉන්න දෙන්න*"+  +"*",parse_mode='Markdown')
 @bot.message_handler(content_types=['new_chat_members'])
 def user_joined_greet(message):
 	print("group Joined Welcome triggered")
