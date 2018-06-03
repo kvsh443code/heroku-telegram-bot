@@ -30,7 +30,7 @@ def send_welcome(message):
 	try:
 		gfromusr_lname = message.from_user.last_name
 	except:
-		gfromusr_lname = " "
+		gfromusr_lname = " - "
 	gfromusr_fullname = str(gfromusr_fname+" "+gfromusr_lname)
 	bot.reply_to(message, "*මට පාඩුවේ ඉන්න දෙන්න*"+"*"+gfromusr_fullname+"*",parse_mode='Markdown')
 @bot.message_handler(content_types=['new_chat_members'])
