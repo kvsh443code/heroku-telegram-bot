@@ -26,7 +26,7 @@ def send_welcome(message):
 @bot.message_handler(commands=['help'])
 def send_welcome(message):
 	print("help triggered")
-	bot.reply_to(message, "*මටට පාාඩුවව ඉන්න දෙන්න අලෝ *",parse_mode='Markdown')
+	bot.reply_to(message, "*මට පාාඩුවව ඉන්න දෙන්න අලෝ *",parse_mode='Markdown')
 @bot.message_handler(content_types=['new_chat_members'])
 def user_joined_greet(message):
 	print("group Joined Welcome triggered")
