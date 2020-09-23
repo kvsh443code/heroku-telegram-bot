@@ -11,7 +11,7 @@ echo "
       <br/>";
 
 
-$conn = pg_connect("dbname=da5pslrps1jns5 host=ec2-79-125-12-48.eu-west-1.compute.amazonaws.com port=5432 user=kllwqbimfzujcz password=e5996fb5d16c7abceb6cb6c922a817019b15e6ccf09851241330777a7a4d7bb4 sslmode=require");
+$conn = pg_connect("dbname=dfl8q695f86rlm host=ec2-3-224-97-209.compute-1.amazonaws.com port=5432 user=rzgeksqnykwxll password=443be8c4cbac281b8f026e95db5f86e439c608ccf4b296310b88effb736f8463 sslmode=require");
 $result = pg_query($conn, "SELECT * FROM msg");
 echo "<table border=1> <tr><th>ID</th><th>CHAT ID</th><th>MESSAGE</th><th>DATE & Time</th><th>STATUS</th></tr>";
 while ($row = pg_fetch_assoc($result)) {
