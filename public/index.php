@@ -6,7 +6,7 @@ echo "
     <h1> HEROKU PHP DEPLOY </h1>
       <b> ごめんなさい </b>
       <br/>
-      <b> OwO </b>
+      <b> UnU ! I had to make data public to get these data to Power BI to analysis</b>
       <br/>
       <br/>";
 
