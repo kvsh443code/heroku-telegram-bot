@@ -10,6 +10,7 @@ from datetime import datetime
 # Example of your code beginning
 #           Config vars
 token = os.environ['token']
+DATABASE_URL = os.environ['DATABASE_URL']
 #some_api_token = os.environ['SOME_API_TOKEN']
 #             ...
 
@@ -21,6 +22,7 @@ bot = telebot.TeleBot(token)
 # some_api = some_api_lib.connect(some_api_token)
 #              ...
 tgadmin=385390931
+conn = None
 
 def todbtext(message):
 	chat_ido = (message.chat.id)
