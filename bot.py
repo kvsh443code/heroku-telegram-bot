@@ -2,6 +2,7 @@
 import redis
 import os
 import telebot
+import psycopg2
 # import some_api_lib
 # import ...
 
@@ -19,6 +20,27 @@ bot = telebot.TeleBot(token)
 # some_api = some_api_lib.connect(some_api_token)
 #              ...
 tgadmin=385390931
+
+def todbtext(message):
+	chat_ido = (message.chat.id)
+	msg_txto = (message.text)
+	date_time = (datetime.fromtimestamp(message.date).strftime('%Y-%m-%d %H:%M:%S'))
+	try:
+		conn = psycopg2.connect(DATABASE_URL, sslmode='require')
+		cur = conn.cursor()
+		query = """INSERT INTO msg (chat_id,message,date_time) VALUES (%s, %s, %s);"""
+		data = (chat_ido,msg_txto,date_time)
+		cur.execute(query,data)
+		conn.commit()
+	except (Exception, psycopg2.Error) as error:
+			if conn:
+				print("Error %s", error)
+				bot.send_message(tgadmin,error)
+
+	finally:
+		if conn:
+			conn.close()
+
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
 	print("welcome triggered")
