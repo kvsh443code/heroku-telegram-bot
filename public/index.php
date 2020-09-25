@@ -10,13 +10,13 @@ echo "
  <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
   </head>
   <body>
+  <div class = 'container'>
     <h1> HEROKU PHP DEPLOY </h1>
       <b> ごめんなさい </b>
       <br/>
       <b> UnU ! I had to make data public to get these data to Power BI for analysis</b>
       <br/>
       <br/>
-      <div class = 'container'> 
 ";
 
 
